@@ -28,6 +28,6 @@
   "vim-dadbod-completion": { "branch": "master", "commit": "8c9051c1cfc73fcf5bfe9a84db7097e4f7c0180d" },
   "vim-dadbod-ui": { "branch": "master", "commit": "2527310098e7458488e61a528614da142aa2dc42" },
   "vim-test": { "branch": "master", "commit": "34aab77f7a63f20a623df45684156915f6182a55" },
-  "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
-  "vimux": { "branch": "master", "commit": "fa35410805b82ffabc29e3cb5cdf3ad0b8dc402d" }
+  "vimux": { "branch": "master", "commit": "fa35410805b82ffabc29e3cb5cdf3ad0b8dc402d" },
+  "zellij-nav.nvim": { "branch": "main", "commit": "25930804397ef540bd2de62f9897bc2db61f9baa" }
 }
