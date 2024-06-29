@@ -1,0 +1,10 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "keywordStyle",
+        "theme",
+        "background",
+        "transparent",
+        "keys"
+    ]
+}
