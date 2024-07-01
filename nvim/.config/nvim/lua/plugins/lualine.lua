@@ -6,6 +6,7 @@ return {
                 theme = "catppuccin",
             },
             sections = {
+                lualine_a = { { 'buffers' } },
                 lualine_x = { { "fileformat", "filetype" } },
             },
         })
