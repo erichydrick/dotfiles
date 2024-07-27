@@ -11,6 +11,8 @@ term = "xterm-256color"
 opacity = 0.8
 blur = false
 
+decorations = "Full"
+
 option_as_alt = "Both"
 
 startup_mode = "Maximized"
