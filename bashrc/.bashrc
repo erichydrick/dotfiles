@@ -124,6 +124,9 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/.bash_completion/alacritty
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
 cd dotfiles && git pull ; cd
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
