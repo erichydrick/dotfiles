@@ -1,6 +1,7 @@
 return {
 	"numToStr/FTerm.nvim",
 	lazy = true,
+	event = "VeryLazy",
 	config = function()
 		require("FTerm")
 		vim.keymap.set("n", "<A-i>", '<CMD>lua require("FTerm").toggle()<CR>')
