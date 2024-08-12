@@ -127,6 +127,9 @@ source ~/.bash_completion/alacritty
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
