@@ -12,4 +12,3 @@ export NVM_DIR="$HOME/.nvm"
 
 cd ~/dotfiles && git pull ; cd -
 source ~/.bashrc
-source ~/.bash_profile
