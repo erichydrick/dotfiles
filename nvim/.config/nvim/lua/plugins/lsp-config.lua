@@ -15,10 +15,8 @@ return {
 					"cssls",
 					"dockerls",
 					"docker_compose_language_service",
-					"gradle_ls",
 					"html",
 					"jdtls",
-					"kotlin_language_server",
 					"lua_ls",
 					"pyright",
 					"terraformls",
@@ -42,9 +40,6 @@ return {
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.gradle_ls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
@@ -64,9 +59,6 @@ return {
 					},
 				},
 				init_options = { bundles = {} },
-				capabilities = capabilities,
-			})
-			lspconfig.kotlin_language_server.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.lua_ls.setup({
@@ -92,7 +84,6 @@ return {
 				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 			end, {}, "List workspace folders")
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}, "Go to type definition")
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}, "Rename")
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}, "Code actions")
 			vim.keymap.set("n", "<leader>f", function()
 				vim.lsp.buf.format({ async = true })
