@@ -131,6 +131,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export NIX_CONF_DIR=$HOME/.config/nix
 
+cd ~/dotfiles && git pull ; cd -
 source ~/.bash_profile
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
