@@ -1,4 +1,3 @@
-alias docker='podman'
 alias ls='ls --color=auto'
 alias vi='nvim'
 
