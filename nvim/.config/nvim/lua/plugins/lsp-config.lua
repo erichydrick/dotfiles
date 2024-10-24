@@ -16,11 +16,7 @@ return {
 					"dockerls",
 					"docker_compose_language_service",
 					"html",
-					"jdtls",
 					"lua_ls",
-					"pyright",
-					"terraformls",
-					"tsserver",
 					"yamlls",
 				},
 			})
@@ -43,31 +39,10 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.jdtls.setup({
-				cmd = {
-					"jdtls",
-					"--jvm-arg=" .. string.format(
-						"-javaagent:%s",
-						vim.fn.expand("~/.local/share/nvim/mason/share/jdtls/lombok.jar")
-					),
-				},
-				settings = {
-					java = {
-						signatureHelp = { enabled = true },
-						import = { enabled = true },
-						rename = { enabled = true },
-					},
-				},
-				init_options = { bundles = {} },
-				capabilities = capabilities,
-			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.terraformls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.yamlls.setup({
