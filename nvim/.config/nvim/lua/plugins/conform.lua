@@ -11,8 +11,8 @@ return {
                     yaml = { "yamlfix" }
                 },
                 format_on_save = { timeout_ms = 500, lsp_fallback = true },
+                vim.keymap.set("n", "<leader>cf", "conform.format({ async = true })")
             })
-            -- TODO: SET UP A KEYBINDING TO MANUALLY FORMAT THE FILE (<LEADER>GF)
         end,
     },
 }

@@ -7,6 +7,8 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set tabstop=4")
 
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
