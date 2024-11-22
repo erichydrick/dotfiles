@@ -69,10 +69,6 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.snyk_ls.setup({
-                cmd = { "/usr/local/bin/snyk-ls", "-f", "/var/logs/snyk" },
-                root_dir = function(name)
-                    return lspconfig.util.find_git_ancestor(name) or vim.loop.os_homedir()
-                end,
                 filetypes = {
                     "java",
                     "javascript",
@@ -85,7 +81,8 @@ return {
                 },
                 init_options = {
                     activateSnykCode = "true",
-                    enableTelementry = "fasle",
+                    activateSnykIac = "true",
+                    enableTelementry = "false",
                     token = os.getenv("SNYK_TOKEN"),
                 },
                 single_file_support = true,

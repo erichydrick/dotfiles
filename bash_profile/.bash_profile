@@ -12,3 +12,5 @@ export NVM_DIR="$HOME/.nvm"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/hydrice/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+source ~/.local_envs

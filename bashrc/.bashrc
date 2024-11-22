@@ -131,10 +131,13 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export NIX_CONF_DIR=$HOME/.config/nix
 
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/hydrice/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 cd ~/dotfiles && git pull ; cd -
 source ~/.bash_profile
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
