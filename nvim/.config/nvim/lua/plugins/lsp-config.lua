@@ -82,7 +82,9 @@ return {
                 init_options = {
                     activateSnykCode = "true",
                     activateSnykIac = "true",
+                    automaticAuthentication = "true",
                     enableTelementry = "false",
+                    endpoint = "https://app.snyk.io",
                     token = os.getenv("SNYK_TOKEN"),
                 },
                 single_file_support = true,

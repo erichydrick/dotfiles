@@ -27,6 +27,7 @@ return {
                             -- even more opts
                         }),
                     },
+                    fzf = {},
                 },
             })
             -- To get ui-select loaded and working with telescope, you need to call
