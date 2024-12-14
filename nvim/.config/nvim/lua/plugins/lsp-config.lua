@@ -17,7 +17,6 @@ return {
 					"docker_compose_language_service",
 					"html",
 					"lua_ls",
-					"yamlls",
 				},
 			})
 		end,
@@ -43,9 +42,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.yamlls.setup({
 				capabilities = capabilities,
 			})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {}, "Go to declaration")
