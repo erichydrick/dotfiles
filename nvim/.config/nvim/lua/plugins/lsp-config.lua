@@ -69,6 +69,7 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.snyk_ls.setup({
+                capabilities = capabilities,
                 filetypes = {
                     "java",
                     "javascript",
@@ -81,10 +82,8 @@ return {
                 },
                 init_options = {
                     activateSnykCode = "true",
-                    activateSnykIac = "true",
                     automaticAuthentication = "true",
                     enableTelementry = "false",
-                    endpoint = "https://app.snyk.io",
                     token = os.getenv("SNYK_TOKEN"),
                 },
                 single_file_support = true,
@@ -93,6 +92,8 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.ts_ls.setup({
+                cmd = { "typescript-language-server", "--stdio" },
+                filetypes = { "javascript", "typescript" },
                 capabilities = capabilities,
             })
             lspconfig.yamlls.setup({

@@ -1,8 +1,9 @@
 return {
-	{
-		"goolord/alpha-nvim",
-		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config)
-		end,
-	},
+    {
+        "goolord/alpha-nvim",
+        enabled = false,
+        config = function()
+            require("alpha").setup(require("alpha.themes.dashboard").config)
+        end,
+    },
 }

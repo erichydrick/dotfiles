@@ -5,6 +5,7 @@
         "theme",
         "background",
         "transparent",
-        "keys"
+        "keys",
+        "util"
     ]
 }
