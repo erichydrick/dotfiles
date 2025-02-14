@@ -116,12 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-. "$HOME/.cargo/env"
-
 source ~/.bash_completion/alacritty
 
 # Set up fzf key bindings and fuzzy completion
@@ -130,11 +124,9 @@ eval "$(fzf --bash)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export NIX_CONF_DIR=$HOME/.config/nix
+export GOPATH=$HOME/go  
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 cd ~/dotfiles && git pull ; cd -
+
 source ~/.bash_profile
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
