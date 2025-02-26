@@ -33,6 +33,11 @@ return {
                                 key = 'd',
                             },
                         },
+                        packages = { enable = true },
+                        project = { enable = true, limit = 8, icon = '', label = '  Recent projects', action = 'Telescope find_files cwd=' },
+                        mru = { enable = true, limit = 10, icon = '', label = '  Recent files', cwd_only = false },
+                        footer = {},
+                        vertical_center = true,
                     },
                     -- config
                 }
