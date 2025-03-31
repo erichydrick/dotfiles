@@ -303,7 +303,6 @@ theme "kanagawa"
 // (Requires restart)
 // 
 // theme_dir "/tmp"
-theme_dir "themes"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
