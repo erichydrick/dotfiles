@@ -40,6 +40,7 @@ toggle-overview=true
 
 [space-bar/state]
 version=32
+workspace-names-map='{"Brave-browser":["Personal","Documentation"],"Alacritty":["Code"]}'
 
 [switcher]
 on-active-display=true
