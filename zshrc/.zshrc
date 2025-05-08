@@ -125,11 +125,7 @@ eval "$(fzf --bash)"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-export NIX_CONF_DIR=$HOME/.config/nix
 export GOPATH=$HOME/go  
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-export PATH=/usr/bin:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 cd ~/dotfiles && git pull ; cd -
