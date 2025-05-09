@@ -1,6 +1,7 @@
 return {
     {
         "williamboman/mason.nvim",
+        tag = "v1.11.0",
         dependencies = {},
         config = function()
             require("mason").setup()
@@ -8,6 +9,7 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
+        tag = "v1.32.0",
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
@@ -22,7 +24,6 @@ return {
                     "snyk_ls",
                     "terraformls",
                     "ts_ls",
-                    "yamlls",
                 },
             })
         end,
