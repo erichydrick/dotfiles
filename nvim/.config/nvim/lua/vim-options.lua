@@ -16,6 +16,7 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.ignorecase = true
+vim.opt.scrolloff = 10
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
