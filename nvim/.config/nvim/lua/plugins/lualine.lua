@@ -3,7 +3,7 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = "kanagawa-paper-ink",
+                theme = "kanagawa",
             },
             sections = {
                 lualine_a = { { "buffers" } },
