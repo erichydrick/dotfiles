@@ -1,3 +1,11 @@
+function ColorMyPencils(color)
+    color = color or "kanagawa"
+    vim.cmd.colorscheme(color)
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+end
+
 return {
     {
         "rebelot/kanagawa.nvim",
@@ -13,7 +21,8 @@ return {
                 },
                 transparent = false,
             })
-            vim.cmd("colorscheme kanagawa")
+            ColorMyPencils("kanagawa")
+            -- vim.cmd("colorscheme kanagawa")
         end,
     }
 }
