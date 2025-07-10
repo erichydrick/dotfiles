@@ -32,7 +32,12 @@ return {
                     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
+                    {
+                        name = 'nvim_lsp',
+                        entry_filter = function(entry, ctx)
+                            return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+                        end,
+                    },
                     { name = "luasnip" }, -- For luasnip users.
                 }, {
                     { name = "buffer" },
@@ -77,6 +82,7 @@ return {
             -- Set up lspconfig.
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+            capabilities.textDocument.completion.completionItem.snippetSupport = false
         end,
     },
 }
