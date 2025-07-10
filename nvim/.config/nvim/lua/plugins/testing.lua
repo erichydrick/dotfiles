@@ -1,3 +1,8 @@
+function FTermTest(cmd)
+    print(cmd)
+    require('FTerm').run(cmd)
+end
+
 return {
     "vim-test/vim-test",
     config = function()
@@ -7,6 +12,9 @@ return {
         vim.keymap.set("n", "<leader>l", ":TestLast<CR>")
         vim.keymap.set("n", "<leader>v", ":TestVisit<CR>")
 
-        vim.cmd("let test#strategy = 'neovim_sticky'")
+        vim.g["test#custom_strategies"] = {
+            fterm = FTermTest,
+        }
+        vim.cmd("let test#strategy = 'fterm'")
     end,
 }
