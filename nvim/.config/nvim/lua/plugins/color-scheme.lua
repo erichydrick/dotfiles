@@ -11,7 +11,7 @@ return {
                     dark = "dragon",
                     light = "lotus",
                 },
-                transparent = false,
+                transparent = true,
             })
             vim.cmd("colorscheme kanagawa")
         end,

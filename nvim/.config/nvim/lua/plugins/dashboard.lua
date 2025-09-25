@@ -3,6 +3,7 @@ return {
         {
             'nvimdev/dashboard-nvim',
             event = 'VimEnter',
+            enabled = false,
             config = function()
                 require('dashboard').setup {
                     theme = 'hyper',
@@ -44,5 +45,11 @@ return {
             end,
             dependencies = { { 'nvim-tree/nvim-web-devicons' } }
         }
-    }
+    },
+    {
+        'goolord/alpha-nvim',
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+        end
+    },
 }
