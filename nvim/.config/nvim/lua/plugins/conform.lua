@@ -6,7 +6,7 @@ return {
             local conform = require("conform")
             conform.setup({
                 formatters_by_ft = {
-                    javascript = { "prettier", stop_after_first = true },
+                    javascript = { "prettierd", "prettier", stop_after_first = true },
                     lua = { "stylua" },
                     yaml = { "yamlfix" }
                 },
