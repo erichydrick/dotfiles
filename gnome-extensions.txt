@@ -40,7 +40,7 @@ toggle-overview=true
 
 [space-bar/state]
 version=32
-workspace-names-map='{"Brave-browser":["App/Documentation", "Personal"],"Ghostty":["Coding"]}'
+workspace-names-map='{"Brave-browser":["Web", "Personal"],"Ghostty":["Coding"]}'
 
 [switcher]
 on-active-display=true
