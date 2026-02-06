@@ -14,10 +14,10 @@ return {
 					"docker_compose_language_service",
 					"dockerls",
 					"gopls",
-					"html",
 					"jdtls",
 					"jsonls",
 					"lua_ls",
+					"templ",
 				},
 			})
 		end,
@@ -39,9 +39,6 @@ return {
 				capabilities = capabilities,
 			})
 			vim.lsp.config("gopls", {
-				capabilities = capabilities,
-			})
-			vim.lsp.config("html", {
 				capabilities = capabilities,
 			})
 			vim.lsp.config("jdtls", {
@@ -66,6 +63,9 @@ return {
 				capabilities = capabilities,
 			})
 			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
+			})
+			vim.lsp.config("templ", {
 				capabilities = capabilities,
 			})
 
