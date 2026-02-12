@@ -3,9 +3,29 @@ return {
     lazy = true,
     event = "VeryLazy",
     config = function()
-        vim.keymap.set("n", "<leader><C-h>", "<cmd>ZellijNavigateLeft<CR>", { silent = true, desc = "Navigate Left" })
-        vim.keymap.set("n", "<leader><C-j>", "<cmd>ZellijNavigateDown<CR>", { silent = true, desc = "Navigate Down" })
-        vim.keymap.set("n", "<leader><C-k>", "<cmd>ZellijNavigateUp<CR>", { silent = true, desc = "Navigate Up" })
-        vim.keymap.set("n", "<leader><C-l>", "<cmd>ZellijNavigateRight<CR>", { silent = true, desc = "Navigate Right" })
+        vim.keymap.set(
+            "n",
+            "<leader><C-h>",
+            "<cmd>ZellijNavigateLeft<CR>",
+            { silent = true, desc = "Navigate Left" }
+        )
+        vim.keymap.set(
+            "n",
+            "<leader><C-j>",
+            "<cmd>ZellijNavigateDown<CR>",
+            { silent = true, desc = "Navigate Down" }
+        )
+        vim.keymap.set(
+            "n",
+            "<leader><C-k>",
+            "<cmd>ZellijNavigateUp<CR>",
+            { silent = true, desc = "Navigate Up" }
+        )
+        vim.keymap.set(
+            "n",
+            "<leader><C-l>",
+            "<cmd>ZellijNavigateRight<CR>",
+            { silent = true, desc = "Navigate Right" }
+        )
     end,
 }

@@ -6,12 +6,25 @@ return {
             local conform = require("conform")
             conform.setup({
                 formatters_by_ft = {
-                    javascript = { "prettierd", "prettier", stop_after_first = true },
+                    java = {
+                        "spotless_gradle",
+                        "google-java-format",
+                        stop_after_first = true,
+                    },
+                    javascript = {
+                        "prettierd",
+                        "prettier",
+                        stop_after_first = true,
+                    },
                     lua = { "stylua" },
-                    yaml = { "yamlfix" }
+                    yaml = { "yamlfix" },
                 },
-                format_on_save = { timeout_ms = 500, lsp_fallback = true },
-                vim.keymap.set("n", "<leader>cf", "conform.format({ async = true })")
+                format_on_save = nil,
+                vim.keymap.set(
+                    "n",
+                    "<leader>cf",
+                    "conform.format({ async = true })"
+                ),
             })
         end,
     },
