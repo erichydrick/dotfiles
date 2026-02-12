@@ -81,9 +81,6 @@ return {
 			end, {}, "List workspace folders")
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}, "Go to type definition")
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}, "Code actions")
-			vim.keymap.set("n", "<leader>f", function()
-				vim.lsp.buf.format({ async = true })
-			end, {}, "Format file")
 		end,
 	},
 }
