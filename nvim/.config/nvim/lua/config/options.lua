@@ -5,6 +5,7 @@
 -- Overrides from defaults
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "telescope"
+vim.g.db_ui_execute_on_save = true
 
 local opt = vim.opt
 
