@@ -5,7 +5,6 @@
 -- Overrides from defaults
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "telescope"
-vim.g.db_ui_execute_on_save = true
 
 local opt = vim.opt
 
@@ -13,6 +12,7 @@ local opt = vim.opt
 opt.clipboard = ""
 opt.cursorline = true
 opt.scrolloff = 10
+opt.shiftwidth = 4
 opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
