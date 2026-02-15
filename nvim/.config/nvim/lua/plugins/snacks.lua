@@ -1,6 +1,7 @@
 return {
     "snacks.nvim",
     opts = {
+        explorer = { enabled = false },
         indent = { enabled = false },
         input = { enabled = false },
         notifier = { enabled = false },
