@@ -128,3 +128,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export GOPATH=$HOME/go  
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+
+. "$HOME/.turso/env"

@@ -7,7 +7,10 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set tabstop=4")
 
-vim.diagnostic.config({ virtual_text = true, severity_sort = { reverse = true } })
+vim.diagnostic.config({
+	virtual_lines = true,
+	severity_sort = { reverse = true },
+})
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
