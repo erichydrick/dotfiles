@@ -22,24 +22,23 @@ return {
 				},
 				transparent = true,
 			})
-			-- vim.cmd("colorscheme kanagawa")
-			ColorMyPencils("kanagawa")
+			vim.cmd("colorscheme kanagawa")
 		end,
 	},
 	{
 		"rose-pine/neovim",
-		enabled = false,
 		lazy = false,
+		enabled = false,
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
 				disable_background = true,
 				styles = {
 					italic = false,
+					transparency = true,
 				},
 			})
-
-			ColorMyPencils("rose-pine-moon")
+			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},
 }
