@@ -80,10 +80,8 @@ export PATH="/opt/homebrew/opt/tomcat@9/bin:$PATH"
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ehydrick/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq@16/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

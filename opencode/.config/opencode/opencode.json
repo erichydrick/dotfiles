@@ -1,18 +1,32 @@
 {
     "$schema": "https://opencode.ai/config.json",
-    "model": "ollama/mixtral-16k",
+    "default_agent": "plan",
     "provider": {
-        "ollama": {
-            "models": {
-                "mixtral-16k": {
-                    "name": "Mixtral"
-                }
-            },
-            "name": "Ollama",
+        "llamacpp": {
             "npm": "@ai-sdk/openai-compatible",
+            "name": "Llama.cpp Server",
             "options": {
-                "baseURL": "http://127.0.0.1:11434/v1"
+                "baseURL": "http://127.0.0.1:8180/v1"
+            },
+            "models": {
+                "mixtral-8x7b-v0.1.Q4_K_M.gguf": {
+                    "name": "Mixtral 8x7b",
+                    "limit": {
+                        "context": 32768,
+                        "output": 8192
+                    }
+                },
+                "Qwen3.5-27B-UD-IQ3_XXS.gguf": {
+                    "name": "Qwen3.5 27B",
+                    "limit": {
+                        "context": 32768,
+                        "output": 8192
+                    }
+                }
             }
         }
-    }
+    },
+    "plugin": [
+        "opencode-agent-skills"
+    ]
 }
