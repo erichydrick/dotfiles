@@ -3,6 +3,31 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
+		require("nvim-treesitter").install({
+			"bash",
+			"dockerfile",
+			"graphql",
+			"html",
+			"http",
+			"java",
+			"javascript",
+			"json",
+			"kotlin",
+			"lua",
+			"python",
+			"sql",
+			"terraform",
+			"xml",
+			"yaml",
+		})
+	end,
+}
+
+--[[
+{
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
 		local treesitter = require("nvim-treesitter")
 		treesitter.setup({})
 		treesitter.install(
@@ -47,3 +72,4 @@ return {
         ]]
 	end,
 }
+]]
