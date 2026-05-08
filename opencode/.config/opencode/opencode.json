@@ -9,8 +9,8 @@
                 "baseURL": "http://127.0.0.1:8180/v1"
             },
             "models": {
-                "mixtral-8x7b-v0.1.Q4_K_M.gguf": {
-                    "name": "Mixtral 8x7b",
+                "gemma-4-E4B-it-Q4_K_M.gguf": {
+                    "name": "Gemma 4",
                     "limit": {
                         "context": 32768,
                         "output": 8192
