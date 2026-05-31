@@ -130,3 +130,5 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 
 . "$HOME/.turso/env"
+export GEM_HOME=~/.ruby
+export PATH="$PATH:~/.ruby/bin"
