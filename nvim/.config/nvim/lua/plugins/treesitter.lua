@@ -20,5 +20,12 @@ return {
 			"xml",
 			"yaml",
 		})
+		vim.treesitter.language.register("yaml", "helm")
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "helm",
+			callback = function(args)
+				vim.treesitter.start(args.buf, "yaml")
+			end,
+		})
 	end,
 }
