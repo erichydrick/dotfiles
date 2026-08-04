@@ -25,7 +25,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			vim.lsp.config("bashls", {
 				capabilities = capabilities,
 			})
@@ -73,7 +74,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}, "Go to definition")
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {}, "Go to implementation")
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}, "Hover text")
-			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, {}, "Show signature")
+			vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, {}, "Show signature")
 			vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, {}, "Add workspace folder")
 			vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, {}, "Remove workspace folder")
 			vim.keymap.set("n", "<leader>wl", function()
