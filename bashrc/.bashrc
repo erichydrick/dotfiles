@@ -105,6 +105,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+eval "$(mise activate bash)"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -123,6 +125,8 @@ eval "$(fzf --bash)"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+export EDITOR=nvim
+export VISUAL=nvim
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source <(jj util completion bash)

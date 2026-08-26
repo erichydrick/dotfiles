@@ -1,0 +1,14 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Eric Hydrick"
+email = "eric.hydrick@gmail.com"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpS0WJ5avDEOh7+109slH6C96s0D0BWAH6odMvzfdB6"
+backends.ssh.program = "/opt/1Password/op-ssh-sign"
+
+[git]
+sign-on-push = true
