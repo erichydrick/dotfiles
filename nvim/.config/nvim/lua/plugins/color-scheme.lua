@@ -22,8 +22,7 @@ return {
 				},
 				transparent = true,
 			})
-			ColorMyPencils()
-			-- vim.cmd("colorscheme kanagawa")
+			vim.cmd("colorscheme kanagawa")
 		end,
 	},
 }

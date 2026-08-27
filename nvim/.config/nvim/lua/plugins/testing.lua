@@ -1,6 +1,6 @@
 function FTermTest(cmd)
     print(cmd)
-    require("FTerm").run(cmd)
+    require('FTerm').run(cmd)
 end
 
 return {
