@@ -125,10 +125,15 @@ eval "$(fzf --bash)"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export EDITOR=nvim
+export VISUAL=nvim
 export GOPATH=$HOME/go  
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
+source <(jj util completion bash)
 
 . "$HOME/.turso/env"
-export GEM_HOME=~/.ruby
-export PATH="$PATH:~/.ruby/bin"
+
+# opencode
+export PATH=/home/eric/.opencode/bin:$PATH
