@@ -1,1 +1,3 @@
 jj/.config/jj/repos
+kube/.kube/cache
+kube/.kube/config
