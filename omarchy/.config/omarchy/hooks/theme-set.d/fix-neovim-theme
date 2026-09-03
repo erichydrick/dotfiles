@@ -1,0 +1,19 @@
+#!/bin/bash
+nvim_theme="$HOME/.local/state/omarchy/current/theme/neovim.lua"
+state_file="$HOME/.local/state/omarchy/current/colorscheme"
+
+[[ -f $nvim_theme ]] || exit 0
+
+# Extract colorscheme name from LazyVim opts block in the theme's neovim.lua
+cs=$(lua - "$nvim_theme" <<'LUA'
+local f = io.open(arg[1], "r")
+local content = f:read("*a")
+f:close()
+local cs = content:match('opts%s*=%s*{%s*colorscheme%s*=%s*"([^"]+)"')
+if cs then print(cs) end
+LUA
+)
+
+if [[ -n $cs ]]; then
+  echo "$cs" >"$state_file"
+fi

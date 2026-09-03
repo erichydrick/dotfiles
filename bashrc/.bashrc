@@ -20,6 +20,9 @@ export VISUAL=nvim
 # opencode
 export PATH=~/.opencode/bin:$PATH
 
+# Go binaries (go install output)
+export PATH="$HOME/go/bin:$PATH"
+
 # Tool-specific setup
 eval "$(mise activate bash)"
 eval "$(fzf --bash)"
@@ -27,3 +30,6 @@ source <(jj util completion bash)
 
 # Turso
 . "$HOME/.turso/env"
+
+# Podman docker alias
+alias docker='podman'

@@ -1,5 +1,4 @@
-local theme_dir = vim.fn.expand("~/.local/state/omarchy/current/theme")
-local theme_file = theme_dir .. "/neovim.lua"
+local theme_file = vim.fn.expand("~/.local/state/omarchy/current/theme/neovim.lua")
 local current_colorscheme = nil
 local debounce_timer = nil
 
@@ -57,9 +56,9 @@ function M.start()
 		})
 	end
 
-	local ok, watcher = pcall(vim.uv.new_fs_event)
-	if ok and watcher then
-		watcher:start(theme_dir, {}, function(err)
+	local ok, poll = pcall(vim.uv.new_fs_poll)
+	if ok and poll then
+		poll:start(theme_file, 1000, function(err)
 			if not err then
 				vim.schedule(debounced_apply)
 			end
@@ -67,7 +66,7 @@ function M.start()
 
 		vim.api.nvim_create_autocmd("VimLeavePre", {
 			callback = function()
-				watcher:stop()
+				poll:stop()
 			end,
 		})
 	end
