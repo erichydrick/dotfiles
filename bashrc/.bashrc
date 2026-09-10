@@ -30,6 +30,3 @@ source <(jj util completion bash)
 
 # Turso
 . "$HOME/.turso/env"
-
-# Podman docker alias
-alias docker='podman'
