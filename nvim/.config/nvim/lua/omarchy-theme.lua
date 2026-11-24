@@ -1,85 +1,56 @@
 local current_dir = vim.fn.expand("~/.local/state/omarchy/current")
 local theme_file = current_dir .. "/theme/neovim.lua"
-
 local uv = vim.uv or vim.loop
+
+local omarchy_spec = require("omarchy-theme-spec")
 
 local last_sig = nil
 local debounce_timer = nil
 local watch_handle = nil
 
-local function parse_theme()
-	local f = io.open(theme_file, "r")
-	if not f then
-		return nil
-	end
-	local content = f:read("*a")
-	f:close()
-
-	local fn = load("return " .. (content:match("return%s+(.+)")))
-	if not fn then
-		return nil
+local function apply_theme()
+	local spec = omarchy_spec.read_theme_file(theme_file)
+	if not spec then
+		return
 	end
 
-	local ok, specs = pcall(fn)
-	if not ok or type(specs) ~= "table" then
-		return nil
+	local parsed = omarchy_spec.parse(spec)
+	if not parsed or not parsed.colorscheme then
+		return
 	end
 
-	local colorscheme = nil
-	local aether_opts = nil
-	for _, spec in ipairs(specs) do
-		if type(spec) == "table" then
-			local pname = spec[1] or spec.name
-			if type(pname) == "string" then
-				if pname:match("LazyVim") then
-					if type(spec.opts) == "table" and type(spec.opts.colorscheme) == "string" then
-						colorscheme = spec.opts.colorscheme
-					end
-				elseif pname:match("aether") then
-					if type(spec.opts) == "table" then
-						aether_opts = spec.opts
-					end
+	local colorscheme = parsed.colorscheme
+
+	-- Enable transparency if supported
+	local trans = omarchy_spec.get_transparency(colorscheme)
+	if trans and trans.setup then
+		pcall(trans.setup)
+	elseif trans and trans.opts then
+		local ok, mod = pcall(require, trans.main or trans.plugin:gsub(".*/", ""))
+		if ok then
+			if type(mod.setup) == "function" then
+				pcall(mod.setup, trans.opts)
+			elseif trans.main then
+				-- Try to load main module and setup
+				local main_mod = trans.main
+				local ok2, m2 = pcall(require, main_mod)
+				if ok2 and type(m2.setup) == "function" then
+					pcall(m2.setup, trans.opts)
 				end
 			end
 		end
+	elseif trans and trans.opts then
+		-- For plugins that use opts in lazy style
 	end
 
-	return colorscheme, aether_opts
-end
-
-local function apply_theme()
-	local colorscheme, aether_opts = parse_theme()
-	if not colorscheme then
-		return
-	end
-
-	-- An aether theme whose plugin is already loaded is handled by
-	-- aether.nvim's own built-in hot-reload (it re-feeds opts and reloads).
-	-- Let it run alone to avoid a double reload flash. Everything else —
-	-- non-aether schemes and the first load of an aether theme — is applied
-	-- here.
-	if aether_opts and package.loaded["aether"] then
-		return
-	end
-
-	local sig = colorscheme .. ":" .. (aether_opts and vim.fn.sha256(vim.inspect(aether_opts)) or "")
+	local sig = colorscheme
 	if sig == last_sig then
 		return
 	end
 
-	-- Load a lazy-loaded colorscheme plugin on demand before :colorscheme,
-	-- so it is on the runtimepath (kanagawa, catppuccin, aether, etc.).
 	pcall(function()
 		require("lazy.core.loader").colorscheme(colorscheme)
 	end)
-
-	-- For an aether theme, inject the palette from the theme file before
-	-- applying (the lazy spec registers the plugin but carries no colors).
-	if aether_opts then
-		pcall(function()
-			require("aether").setup(aether_opts)
-		end)
-	end
 
 	local ok, err = pcall(vim.cmd.colorscheme, colorscheme)
 	if ok then
@@ -116,8 +87,6 @@ local function start_watch()
 	end
 
 	local function on_change()
-		-- The whole theme/ directory is swapped atomically; re-arm so the
-		-- watcher keeps following it.
 		pcall(function()
 			if not handle:is_closing() then
 				handle:stop()
